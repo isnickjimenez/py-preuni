@@ -17,7 +17,8 @@ class HomeController extends Controller
 
     public function create() 
     {
-        return view('public.enroll');
+        return view('components.query');
+        // return view('public.enroll');
     }
 
     public function store(Request $request)

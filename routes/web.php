@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\DniController;
 use App\Http\Controllers\EnrollmentCotroller;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\HomeController;
@@ -20,5 +21,12 @@ Route::post('matricula', [HomeController::class, 'store'])
 /***********************/
 
 Route::resource('matriculados', EnrollmentCotroller::class)
-    ->parameters(['matriculados' => 'enrollment'])
-    ->names('private.enrollments');
+        ->parameters(['matriculados' => 'enrollment'])
+        ->names('private.enrollments');
+
+
+/***    API Route    ***/
+/***********************/
+
+Route::post('/query', DniController::class)->name('api.invoke');
+

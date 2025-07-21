@@ -5,16 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>@yield('title')</title>
-    {{-- <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> --}}
+    <title>Matricula para PreUni</title>
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
     {{-- fonteawesome --}}
     {{-- tipografia --}}
 </head>
 
-<body>
-    <header></header>
-    @yield('content')
-    <footer></footer>
+<body style="background-color: oklch(21% .034 264.665); color: #fff;">
+    {{ $slot }}
 </body>
 
 </html>

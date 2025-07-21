@@ -3,6 +3,15 @@
 Este proyecto es un sistema web desarrollado en Laravel para la **gestión de matrículas** de estudiantes en una academia preuniversitaria. Permite registrar estudiantes, apoderados, asignarlos a grupos, generar reportes administrativos y también cuenta con un formulario de inscripción pública para nuevos postulantes.
 
 ---
+correo:      nick.nbjb@gmail.com
+Usuario:     Nicky
+Contraseña:  Matoto_32@d.
+
+
+
+Token : 
+
+
 
 ## 🛠️ Tecnologías utilizadas
 
