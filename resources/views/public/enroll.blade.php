@@ -5,7 +5,7 @@
         </h1>
 
         {{-- Errores en listado --}}
-        @if ($errors->any())
+        {{-- @if ($errors->any())
             <div>
                 <h2>Errores:</h2>
                 <ul>
@@ -14,7 +14,7 @@
                     @endforeach
                 </ul>
             </div>
-        @endif
+        @endif --}}
 
         <form action="{{ route('public.enrollments.store') }}" method="POST" class="w-full max-w-lg m-auto">
             @csrf
@@ -32,7 +32,6 @@
                             class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-900 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                             id="dni_S" type="text" name="dni_S"
                             value="{{ $response['numeroDocumento'] ?? '' }}" readonly>
-                        {{-- <p class="text-red-500 text-xs italic">Este campo es obligatorio.</p> --}}
                     </div>
                     <div class="w-full md:w-2/3 px-3">
                         <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
@@ -53,13 +52,13 @@
                 <div class="flex flex-wrap -mx-3 mb-6">
                     <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                         <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                            for="grid-password">
+                            for="address_S">
                             Direccion
                         </label>
                         <input
                             class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-900 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                            id="grid-password" type="text" name="address_S" value="{{ old('address_S') }}">
-                        {{-- <p class="text-gray-600 text-xs italic">Make it as long and as crazy as you'd like</p> --}}
+                            id="address_S" type="text" name="address_S" value="{{ old('address_S') }}">
+                        <x-input-error field="address_S" />
                     </div>
                     <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                         <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
@@ -69,7 +68,7 @@
                         <input
                             class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-900 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                             id="grid-password" type="text" name="school_S" value="{{ old('school_S') }}">
-                        {{-- <p class="text-gray-600 text-xs italic">Make it as long and as crazy as you'd like</p> --}}
+                        <x-input-error field="school_S" />
                     </div>
                 </div>
                 <div class="flex flex-wrap -mx-3 mb-6">
@@ -81,6 +80,7 @@
                         <input
                             class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-900 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                             id="grid-city" type="text" name="phone_S" value="{{ old('phone_S') }}">
+                        <x-input-error field="phone_S" />
                     </div>
                     <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
                         <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
@@ -114,6 +114,7 @@
                         <input
                             class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-900 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                             id="grid-zip" type="text" name="carrer_G" value="{{ old('carrer_G') }}">
+                        <x-input-error field="carrer_G" />
                     </div>
                 </div>
             </x-card-data>
@@ -132,6 +133,7 @@
                             <input id="dni_G" name="dni_G" type="text" placeholder="DNI"
                                 value="{{ old('dni_G') }}"
                                 class="w-full bg-gray-200 text-gray-700 rounded-l px-4 py-3 focus:outline-none" />
+
                             <button type="button" aria-label="Buscar DNI" onclick="buscarApoderado()"
                                 class="pr-3 h-full flex items-center justify-center text-gray-600 hover:text-gray-800">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
@@ -141,6 +143,7 @@
                                 </svg>
                             </button>
                         </div>
+                        <x-input-error field="dni_G" />
                         {{-- <p class="text-red-500 text-xs italic">Este campo es obligatorio.</p> --}}
                     </div>
 
@@ -152,10 +155,13 @@
                         <input
                             class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-900 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                             type="text" id="slug_name_G" name="slug_name_G" value="{{ old('name_complet') }}">
+                        <x-input-error field="dni_G" />
                     </div>
                     <input type="hidden" name="name_G" id="name_G" value="{{ $response['nombres'] }}">
-                    <input type="hidden" name="last_name_G" id="last_name_G" value="{{ $response['apellidoPaterno'] }}">
-                    <input type="hidden" name="middle_name_G" id="middle_name_G" value="{{ $response['apellidoMaterno'] }}">
+                    <input type="hidden" name="last_name_G" id="last_name_G"
+                        value="{{ $response['apellidoPaterno'] }}">
+                    <input type="hidden" name="middle_name_G" id="middle_name_G"
+                        value="{{ $response['apellidoMaterno'] }}">
                 </div>
                 <div class="flex flex-wrap -mx-3 mb-6">
                     <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
@@ -166,6 +172,7 @@
                         <input
                             class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-900 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                             id="grid-city" type="text" name="phone_G" value="{{ old('phone_G') }}">
+                        <x-input-error field="phone_G" />
                     </div>
                     <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                         <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
@@ -175,6 +182,7 @@
                         <input
                             class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-900 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                             id="grid-zip" type="text" name="address_G" value="{{ old('address_G') }}">
+                        <x-input-error field="address_G" />
                     </div>
                 </div>
             </x-card-data>

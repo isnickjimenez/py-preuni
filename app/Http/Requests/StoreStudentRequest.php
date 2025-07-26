@@ -22,30 +22,37 @@ class StoreStudentRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'dni_S' => 'required|min:8|max:8',
-            'name_S' => 'required|min:3|max:255',
-            'last_name_S' => 'required|min:3|max:255',
-            'middle_name_S' => 'required|min:3|max:255',
-            'slug_name_S' => 'required|min:3|max:255',
-            'phone_S' => 'required',
-            'address_S' => 'required',
-            'school_S' => 'required',
-            'guardian_id' => 'required',
+            'dni_S' => 'required',
+            'slug_name_S' => 'required',
+            'phone_S' =>  'required',
+            // 'address_S' => 'required',
+            // 'school_S' => 'required',
+            // 'dni_G' => 'required',
+            // 'name_G' => 'required',
+            // 'last_name_G' => 'required',
+            // 'middle_name_G' => 'required',
+            // 'slug_name_G' => 'required',
+            // 'phone_G' => 'required',
+            // 'address_G' => 'required',
+            // 'group_G' => 'required',
+            // 'carrer_G' => 'required',
         ];
     }
 
     public function messages()
     {
         return [
-            'dni_S.required' => 'Este campo es obligatorio.',
-            'name_S.required' => 'required|min:3|max:255',
-            'last_name_S.required' => 'required|min:3|max:255',
-            'middle_name_S.required' => 'required|min:3|max:255',
-            'slug_name_S.required' => 'required|min:3|max:255',
-            'phone_S.required' => 'required',
-            'address_S.required' => 'required',
-            'school_S.required' => 'required',
-            'guardian_id.required' => 'required',
+            'dni_S.required' => 'Este campo debe tener un dni',
+            'slug_name_S.required' => 'Este campo debe tener un nombre',
+            'phone_S.required' => 'Este campo es obligatorio.',
+            // 'address_S.required' => 'Este campo es obligatorio.',
+            // 'school_S.required' => 'Este campo es obligatorio.',
+            // 'dni_G.required' => 'Este campo es obligatorio.',
+            // 'slug_name_G.required' => 'Este campo es obligatorio.',
+            // 'phone_G.required' => 'Este campo es obligatorio.',
+            // 'address_G.required' => 'Este campo es obligatorio.',
+            // 'group_G.required' => 'Este campo es obligatorio.',
+            // 'carrer_G.required' => 'Este campo es obligatorio.',
         ];
     }
 }

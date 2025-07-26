@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreStudentRequest;
 use App\Models\Enrollment;
 use App\Models\Group;
 use App\Models\Guardian;
@@ -20,9 +21,9 @@ class HomeController extends Controller
         return view('components.query');
     }
 
-    public function store(Request $request)
+    public function store(StoreStudentRequest    $request)
     {
-        // return $request;
+         dd($request->all());
 
         $guardia = Guardian::firstOrCreate(
             ['dni_G' => $request->dni_G,],                  // Aqui busca si con el dni ya existe el guardian
