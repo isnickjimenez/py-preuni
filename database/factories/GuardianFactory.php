@@ -21,6 +21,7 @@ class GuardianFactory extends Factory
             'name_G' => $this->faker->name(),
             'last_name_G' => $this->faker->lastName(),
             'middle_name_G' => $this->faker->lastName(),
+            'slug_name_G' => $this->faker->lastName(),
             'phone_G' => $this->faker->numerify('########'),
             'address_G' => $this->faker->streetAddress(),
         ];

@@ -11,8 +11,12 @@
     {{-- tipografia --}}
 </head>
 
-<body style="background-color: oklch(21% .034 264.665); color: #fff;">
-    {{ $slot }}
+<body style="background-color: #5d881a;">
+    <div class="flex items-center justify-center min-h-screen w-full max-w-5xl m-auto">
+        <div class="appearance-none block w-full p-4 bg-white border border-gray-200 rounded py-3  leading-tight focus:outline-none focus:bg-white">
+            {{ $slot }}
+        </div>
+    </div>
 </body>
 
 </html>

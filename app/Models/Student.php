@@ -17,7 +17,7 @@ class Student extends Model
         'name_S',
         'last_name_S',
         'middle_name_S',
-        // 'slug_name_S', Esto es para la URL /jimenez-baca-nick-briam/notas
+        'slug_name_S',
         'phone_S',
         'address_S',
         'school_S',

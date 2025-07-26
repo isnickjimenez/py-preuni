@@ -17,6 +17,7 @@ class Guardian extends Model
         'name_G',
         'last_name_G',
         'middle_name_G',
+        'slug_name_G',
         'phone_G',
         'address_G',
     ];

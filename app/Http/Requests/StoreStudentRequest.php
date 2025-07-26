@@ -22,12 +22,30 @@ class StoreStudentRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'dniE' => 'required',
-            'nameE' => 'required',
-            'firtsNameE' => 'required',
-            'secondNameE' => 'required',
-            'phoneNumberE'=> 'required',
-            'schoolE' => 'required',
+            'dni_S' => 'required|min:8|max:8',
+            'name_S' => 'required|min:3|max:255',
+            'last_name_S' => 'required|min:3|max:255',
+            'middle_name_S' => 'required|min:3|max:255',
+            'slug_name_S' => 'required|min:3|max:255',
+            'phone_S' => 'required',
+            'address_S' => 'required',
+            'school_S' => 'required',
+            'guardian_id' => 'required',
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'dni_S.required' => 'Este campo es obligatorio.',
+            'name_S.required' => 'required|min:3|max:255',
+            'last_name_S.required' => 'required|min:3|max:255',
+            'middle_name_S.required' => 'required|min:3|max:255',
+            'slug_name_S.required' => 'required|min:3|max:255',
+            'phone_S.required' => 'required',
+            'address_S.required' => 'required',
+            'school_S.required' => 'required',
+            'guardian_id.required' => 'required',
         ];
     }
 }

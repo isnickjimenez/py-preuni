@@ -21,6 +21,7 @@ class StudentFactory extends Factory
             'name_S' => $this->faker->name(),
             'last_name_S' => $this->faker->lastName(),
             'middle_name_S' => $this->faker->lastName(),
+            'slug_name_S' => $this->faker->lastName(),
             'phone_S' => $this->faker->phoneNumber(),
             'address_S' => $this->faker->streetAddress(),
             'school_S' => $this->faker->word(),

@@ -15,35 +15,37 @@ class HomeController extends Controller
         return view('public.welcome');
     }
 
-    public function create() 
+    public function create()
     {
         return view('components.query');
-        // return view('public.enroll');
     }
 
     public function store(Request $request)
     {
+        // return $request;
+
         $guardia = Guardian::firstOrCreate(
             ['dni_G' => $request->dni_G,],                  // Aqui busca si con el dni ya existe el guardian
             [
                 'name_G' => $request->name_G,
                 'last_name_G' => $request->last_name_G,
                 'middle_name_G' => $request->middle_name_G,
+                'slug_name_G' => $request->slug_name_G,
                 'phone_G' => $request->phone_G,
                 'address_G' => $request->address_G
             ]
         );
 
         $student = Student::firstOrCreate(
-            ['dni_S' => $request->dni_S],                 
+            ['dni_S' => $request->dni_S],
             [
                 'name_S' => $request->name_S,
                 'last_name_S' => $request->last_name_S,
                 'middle_name_S' => $request->middle_name_S,
+                'slug_name_S' => $request->slug_name_S,            // Falta crear en la base de datos
                 'phone_S' => $request->phone_S,
                 'address_S' => $request->address_S,
                 'school_S' => $request->school_S,
-                // 'grado_S' => $request->grado_S,            // Falta crear en la base de datos
                 'guardian_id' => $guardia->id,
             ]
         );

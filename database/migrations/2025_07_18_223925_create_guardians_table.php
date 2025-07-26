@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('name_G');
             $table->string('last_name_G');
             $table->string('middle_name_G');
+            $table->string('slug_name_G');
             $table->string('phone_G');
             $table->string('address_G');         
             $table->timestamps();
